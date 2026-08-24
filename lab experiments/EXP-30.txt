@@ -1,0 +1,25 @@
+DAY 4 - QUESTION 1: Customer Segmentation via Clustering Analysis
+========================================================================
+Problem Statement:
+Segment supermarket mall customers into 5 target clusters based on Annual Income (k$) and Spending Score (1-100) using K-Means Clustering.
+
+1. Dataset Structure:
+   CustomerID | Gender | Age | Annual Income (k$) | Spending Score (1-100)
+   01         | Male   | 19  | 15                 | 39
+   02         | Male   | 21  | 15                 | 81
+   03         | Female | 20  | 16                 | 6
+   04         | Female | 23  | 16                 | 77
+   05         | Female | 31  | 17                 | 40
+
+2. Customer Segments (5 Distinct Clusters):
+   - Cluster 1 (Usual / Sensible Customers): Medium Annual Income, Medium Spending Score.
+   - Cluster 2 (Priority / VIP Target Customers): High Annual Income, High Spending Score.
+   - Cluster 3 (Careful / Conservative Customers): High Annual Income, Low Spending Score.
+   - Cluster 4 (Young / Spendthrift Target Customers): Low Annual Income, High Spending Score (e.g., Customer 2 & 4).
+   - Cluster 5 (Miser / Senior Citizen Target Customers): Low Annual Income, Low Spending Score (e.g., Customer 3).
+
+3. Algorithm Execution (K-Means with k=5):
+   - Feature Selection: Annual Income (X-axis) and Spending Score (Y-axis).
+   - Distance Metric: Euclidean Distance.
+   - Objective: Minimize Within-Cluster Sum of Squares (WCSS).
+   - Marketing Strategy: Focus promotional discounts and premium loyalty programs on Priority and Young Target Customer segments.

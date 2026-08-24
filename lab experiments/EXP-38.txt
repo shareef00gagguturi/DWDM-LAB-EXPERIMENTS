@@ -1,0 +1,39 @@
+DAY 4 - QUESTION 9: ARFF Dataset Creation & Rule Induction from Decision Tree
+========================================================================
+Given Decision Tree:
+- Height > 180cm:
+    * Yes -> Male
+    * No -> Weight > 80kg:
+        * Yes -> Male
+        * No  -> Female
+
+1. (a) ARFF Dataset Representation (gender_tree.arff):
+------------------------------------------------------------------------
+@relation person_gender
+
+@attribute Height numeric
+@attribute Weight numeric
+@attribute Gender {Male, Female}
+
+@data
+185, 75, Male
+182, 85, Male
+175, 85, Male
+170, 90, Male
+165, 55, Female
+172, 60, Female
+178, 65, Female
+------------------------------------------------------------------------
+
+2. (b) Rule-Based Induction:
+   - Rule 1: IF Height > 180cm THEN Gender = Male
+   - Rule 2: IF Height <= 180cm AND Weight > 80kg THEN Gender = Male
+   - Rule 3: IF Height <= 180cm AND Weight <= 80kg THEN Gender = Female
+
+3. (c) Comparison & Confusion Matrix in WEKA:
+   - Run J48 (Tree) vs JRip (Rules) on the dataset.
+   - Confusion Matrix format:
+     === Confusion Matrix ===
+        a   b   <-- classified as
+       TP  FN | a = Male
+       FP  TN | b = Female

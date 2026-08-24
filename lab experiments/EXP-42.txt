@@ -1,0 +1,32 @@
+DAY 4 - QUESTION 13: Meta-Rule Matching & Mining Comparison
+========================================================================
+Dataset:
+T100: {M, O, N, K, E, Y}
+T200: {D, O, N, K, E, Y}
+T300: {M, A, K, E}
+T400: {M, U, C, K, Y}
+T500: {C, O, K, I, E}
+
+(a) Apriori vs FP-Growth Mining Process & Efficiency Comparison:
+    - Frequent Itemsets (minsup = 3 / 60%):
+      * 1-itemsets: {K}:5, {E}:4, {M}:3, {O}:3, {Y}:3
+      * 2-itemsets: {K, E}:4, {K, M}:3, {K, O}:3, {K, Y}:3, {E, O}:3
+      * 3-itemsets: {K, E, O}:3
+    - Efficiency Comparison:
+      * Apriori: Scans entire database multiple times (per candidate length k) and incurs large candidate generation and testing overhead.
+      * FP-Growth: Scans DB only twice, constructs a compact FP-Tree in memory, and uses divide-and-conquer conditional pattern trees, being significantly faster for dense datasets.
+
+(b) Strong Association Rules matching Meta-Rule:
+    Meta-Rule Template: buys(X, item1) ^ buys(X, item2) => buys(X, item3)
+    [Form: {item1, item2} -> {item3}]
+
+    Extracted from Frequent 3-Itemset {K, E, O} (Support = 3/5 = 60%):
+    1. {K, O} -> {E}:
+       - Support = 3/5 = 60%
+       - Confidence = Support({K, E, O}) / Support({K, O}) = 3/3 = 100.0%
+    2. {E, O} -> {K}:
+       - Support = 3/5 = 60%
+       - Confidence = Support({K, E, O}) / Support({E, O}) = 3/3 = 100.0%
+    3. {K, E} -> {O}:
+       - Support = 3/5 = 60%
+       - Confidence = Support({K, E, O}) / Support({K, E}) = 3/4 = 75.0%

@@ -1,0 +1,24 @@
+DAY 4 - QUESTION 2: K-Means Clustering & Visualization in WEKA
+========================================================================
+1. CSV File Content (employee_data.csv):
+------------------------------------------------------------------------
+EmployeeID,Gender,Age,Salary,Credit
+111,Male,28,150000,39
+222,Male,25,150000,27
+333,Female,26,160000,42
+444,Female,25,160000,40
+555,Female,30,170000,64
+666,Male,29,200000,72
+------------------------------------------------------------------------
+
+2. WEKA Step-by-Step Implementation:
+   a. Open WEKA Explorer -> 'Preprocess' tab -> Load 'employee_data.csv'.
+   b. Apply 'weka.filters.unsupervised.attribute.Remove' to filter out 'EmployeeID' (as it is a non-predictive identifier).
+   c. Navigate to the 'Cluster' tab -> Select 'SimpleKMeans'.
+   d. Click on SimpleKMeans properties:
+      - Set 'numClusters' (k) to desired size (e.g., 2 or 3).
+      - Set 'distanceFunction' to EuclideanDistance.
+   e. Choose Cluster Mode: 'Use training set' -> Click 'Start'.
+   f. Visualization:
+      - Right-click the result entry in the Result list -> Select 'Visualize cluster assignments'.
+      - Set X-axis to 'Salary' and Y-axis to 'Credit' or 'Age' to plot and analyze cluster separations.

@@ -1,0 +1,52 @@
+DAY 4 - QUESTION 10: ARFF Dataset, Apriori & FP-Growth Comparison
+========================================================================
+Transactions:
+T1: {SONY, BPL, LG}
+T2: {BPL, SAMSUNG}
+T3: {BPL, ONIDA}
+T4: {SONY, BPL, SAMSUNG}
+T5: {SONY, ONIDA}
+T6: {BPL, ONIDA}
+T7: {SONY, ONIDA}
+T8: {SONY, BPL, ONIDA, LG}
+T9: {SONY, BPL, ONIDA}
+
+Parameters: min_sup = 2 (22.2%), min_conf = 50%
+
+1. ARFF File Format:
+------------------------------------------------------------------------
+@relation electronics_market
+
+@attribute SONY {0, 1}
+@attribute BPL {0, 1}
+@attribute LG {0, 1}
+@attribute SAMSUNG {0, 1}
+@attribute ONIDA {0, 1}
+
+@data
+1,1,1,0,0
+0,1,0,1,0
+0,1,0,0,1
+1,1,0,1,0
+1,0,0,0,1
+0,1,0,0,1
+1,0,0,0,1
+1,1,1,0,1
+1,1,0,0,1
+------------------------------------------------------------------------
+
+2. Item Support Counts:
+   - SONY: 6, BPL: 6, ONIDA: 6, LG: 2, SAMSUNG: 2 (All frequent >= 2)
+
+3. Frequent Itemsets:
+   - 2-itemsets: {SONY, BPL}: 4, {SONY, ONIDA}: 4, {SONY, LG}: 2, {SONY, SAMSUNG}: 1 (Pruned),
+                 {BPL, SAMSUNG}: 2, {BPL, ONIDA}: 4, {BPL, LG}: 2, {ONIDA, LG}: 1 (Pruned)
+   - 3-itemsets: {SONY, BPL, ONIDA}: 2, {SONY, BPL, LG}: 2
+
+4. Rules Generated & Comparison:
+   - {SONY, LG} -> {BPL}: Conf = 2/2 = 100%
+   - {BPL, LG} -> {SONY}: Conf = 2/2 = 100%
+   - {LG} -> {SONY, BPL}: Conf = 2/2 = 100%
+   - {SONY, ONIDA} -> {BPL}: Conf = 2/4 = 50%
+   - {BPL, ONIDA} -> {SONY}: Conf = 2/4 = 50%
+   - Both Apriori and FP-Growth yield identical complete rule sets, but FP-growth avoids candidate generation bottlenecks.

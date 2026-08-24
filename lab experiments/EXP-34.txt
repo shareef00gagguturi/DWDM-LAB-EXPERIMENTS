@@ -1,0 +1,16 @@
+DAY 4 - QUESTION 5: Mobile Phones Sold vs. Money Scatter Plot Analysis
+========================================================================
+Given Data Points (x, y):
+x (Number of phones sold): [4,  1,  5,  7,  10, 2,  50,  25, 90,  36]
+y (Money / Revenue):       [12, 5, 13, 19,  31, 7, 153,  72, 275, 110]
+
+Paired Coordinate Points (x, y):
+(1, 5), (2, 7), (4, 12), (5, 13), (7, 19), (10, 31), (25, 72), (36, 110), (50, 153), (90, 275)
+
+Scatter Plot & Trend Interpretation:
+1. Plotting:
+   - Horizontal Axis (X-axis): Number of mobile phones sold.
+   - Vertical Axis (Y-axis): Money / Total Revenue generated.
+2. Correlation & Trend:
+   - The plot demonstrates a strong positive linear correlation (approx. y ≈ 3x).
+   - As the number of mobile phones sold increases, total money increases proportionally without extreme outliers.

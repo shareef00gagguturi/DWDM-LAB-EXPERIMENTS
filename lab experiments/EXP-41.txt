@@ -1,0 +1,26 @@
+DAY 4 - QUESTION 12: Standard Deviation & Variance Calculation
+========================================================================
+Dataset (9 Cars):
+AvgSpeed (X):  [78, 81, 82, 74, 83, 82, 77, 80, 70]
+TotalTime (Y): [39, 37, 36, 42, 35, 36, 40, 38, 46]
+n = 9
+
+1. Mean Calculations:
+   - Mean(AvgSpeed)  = (78+81+82+74+83+82+77+80+70) / 9 = 707 / 9 ≈ 78.56 kph
+   - Mean(TotalTime) = (39+37+36+42+35+36+40+38+46) / 9 = 349 / 9 ≈ 38.78 mins
+
+2. (a) & (b) Variance and Standard Deviation for AvgSpeed:
+   - Sum of squared differences from mean:
+     (78-78.56)^2 + (81-78.56)^2 + (82-78.56)^2 + (74-78.56)^2 + (83-78.56)^2 + (82-78.56)^2 + (77-78.56)^2 + (80-78.56)^2 + (70-78.56)^2
+     = 0.31 + 5.95 + 11.83 + 20.79 + 19.71 + 11.83 + 2.43 + 2.07 + 73.27 ≈ 148.22
+   - Sample Variance (s^2) = 148.22 / (9 - 1) = 18.53
+   - Sample Standard Deviation (s) = sqrt(18.53) ≈ 4.30 kph
+   (Population Variance sigma^2 = 16.47, Population sigma = 4.06 kph)
+
+3. (a) & (b) Variance and Standard Deviation for TotalTime:
+   - Sum of squared differences from mean:
+     (39-38.78)^2 + (37-38.78)^2 + (36-38.78)^2 + (42-38.78)^2 + (35-38.78)^2 + (36-38.78)^2 + (40-38.78)^2 + (38-38.78)^2 + (46-38.78)^2
+     = 0.05 + 3.17 + 7.73 + 10.37 + 14.29 + 7.73 + 1.49 + 0.61 + 52.13 ≈ 97.56
+   - Sample Variance (s^2) = 97.56 / (9 - 1) = 12.19
+   - Sample Standard Deviation (s) = sqrt(12.19) ≈ 3.49 mins
+   (Population Variance sigma^2 = 10.84, Population sigma = 3.29 mins)

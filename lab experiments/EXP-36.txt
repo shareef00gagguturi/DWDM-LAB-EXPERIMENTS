@@ -1,0 +1,27 @@
+DAY 4 - QUESTION 7: Decision Tree vs. SVM on Diabetes Dataset in WEKA
+========================================================================
+Dataset: diabetes.arff / diabetes.csv
+
+1. Methodology & Steps in WEKA:
+   a. Load 'diabetes.arff' in Explorer -> Preprocess.
+   b. Run Decision Tree: Classify -> trees -> J48 (10-fold cross validation).
+   c. Run SVM: Classify -> functions -> SMO (10-fold cross validation).
+
+2. Evaluation Metrics Calculation:
+   - Accuracy = (TP + TN) / (TP + TN + FP + FN)
+   - Precision = TP / (TP + FP)
+   - Recall = TP / (TP + FN)
+   - F1-Score = 2 * (Precision * Recall) / (Precision + Recall)
+
+3. Typical Experimental Results:
+   -------------------------------------------------------------
+   Classifier      | Accuracy (%) | Precision | Recall | F1-Measure
+   -------------------------------------------------------------
+   J48 (Tree)      | ~73.8%       | 0.735     | 0.738  | 0.735
+   SMO (SVM)       | ~77.3%       | 0.768     | 0.773  | 0.765
+   -------------------------------------------------------------
+
+4. Summary & Plotting:
+   - SVM (SMO) generally yields a slightly higher accuracy and F1-score due to optimal margin hyperplane separation.
+   - J48 provides direct human-interpretable IF-THEN clinical rules.
+   - Plots: Right-click classifier result -> 'Visualize threshold curve' to plot ROC and PR curves.

@@ -1,0 +1,45 @@
+DAY 4 - QUESTION 8: Discretization & Binning Techniques in R
+========================================================================
+Sorted Student Marks:
+Data: 50, 55, 55, 55, 58, 59, 60, 61, 63, 63, 65, 65, 67, 71, 71, 72, 75
+Total observations (N) = 17
+
+1. (a) Equal-Frequency (Equi-Depth) Partitioning (3 Bins):
+   - Number of elements per bin ≈ 17 / 3 ≈ 6 elements (Bins: 6, 6, 5)
+   - Bin 1: [50, 55, 55, 55, 58, 59]
+   - Bin 2: [60, 61, 63, 63, 65, 65]
+   - Bin 3: [67, 71, 71, 72, 75]
+
+2. (b) Equal-Width Partitioning (3 Bins):
+   - Range = Max - Min = 75 - 50 = 25
+   - Width (w) = Range / 3 = 25 / 3 ≈ 8.33
+   - Intervals: [50, 58.33], (58.33, 66.66], (66.66, 75]
+   - Bin 1 [50 to 58.33]: [50, 55, 55, 55, 58]
+   - Bin 2 (58.33 to 66.66]: [59, 60, 61, 63, 63, 65, 65]
+   - Bin 3 (66.66 to 75]: [67, 71, 71, 72, 75]
+
+3. (c) Clustering-Based Partitioning (K-Means with k=3):
+   - Cluster 1 (Low Marks Centroid ≈ 54.6): [50, 55, 55, 55, 58]
+   - Cluster 2 (Mid Marks Centroid ≈ 62.3): [59, 60, 61, 63, 63, 65, 65]
+   - Cluster 3 (High Marks Centroid ≈ 71.2): [67, 71, 71, 72, 75]
+
+4. R Script:
+------------------------------------------------------------------------
+marks <- c(50, 55, 55, 55, 58, 59, 60, 61, 63, 63, 65, 65, 67, 71, 71, 72, 75)
+
+# Histogram
+hist(marks, breaks=3, col="lightblue", main="Equal-Width Binning Histogram", xlab="Marks")
+
+# Equal Width Binning
+cut_width <- cut(marks, breaks=3)
+table(cut_width)
+
+# Equal Frequency Binning
+library(Hmisc)
+cut_freq <- cut2(marks, g=3)
+table(cut_freq)
+
+# K-Means Clustering
+km <- kmeans(marks, centers=3)
+print(km$cluster)
+------------------------------------------------------------------------

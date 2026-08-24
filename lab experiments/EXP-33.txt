@@ -1,0 +1,28 @@
+DAY 4 - QUESTION 4: Vegetarian vs. Non-Vegetarian Frequency Analysis
+========================================================================
+Given Data:
+Person  | Vegetarian
+--------|------------
+Gopu    | yes
+Babu    | yes
+Baby    | yes
+Gopal   | no
+Krishna | yes
+Jai     | no
+Dev     | no
+Malini  | yes
+Hema    | yes
+Anu     | yes
+
+1. Frequency Count Calculation:
+   - Total Persons = 10
+   - Persons with 'yes' (Vegetarian):
+     [Gopu, Babu, Baby, Krishna, Malini, Hema, Anu] = 7
+   - Persons with 'no' (Non-Vegetarian):
+     [Gopal, Jai, Dev] = 3
+
+2. Answer:
+   - Total Vegetarian count = 7
+   - Total Non-Vegetarian count = 3
+   - Which type has a greater value?
+     Vegetarian person total count is greater (7 > 3).

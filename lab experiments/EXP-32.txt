@@ -1,0 +1,27 @@
+DAY 4 - QUESTION 3: Naive Bayes vs. SVM (SMO) Classifier Comparison in WEKA
+========================================================================
+Objective:
+Evaluate and compare Naive Bayes and Support Vector Machine (SVM / SMO) on categorical/classification data.
+
+1. Execution Steps in WEKA:
+   a. Go to 'Preprocess' tab -> Load dataset (e.g., vote.arff, diabetes.arff, or contact-lenses.arff).
+   b. Switch to 'Classify' tab -> Select Test Option: 'Cross-validation' (Folds: 10).
+   c. Classifier 1 (Naive Bayes):
+      - Choose 'classifiers -> bayes -> NaiveBayes' -> Click 'Start'.
+      - Record: Correctly Classified Instances (%), Precision, Recall, F-Measure, ROC Area.
+   d. Classifier 2 (SVM / SMO):
+      - Choose 'classifiers -> functions -> SMO' (Sequential Minimal Optimization) -> Click 'Start'.
+      - Record: Correctly Classified Instances (%), Precision, Recall, F-Measure, ROC Area.
+
+2. Comparative Metrics Summary:
+   -------------------------------------------------------------
+   Metric                   | Naive Bayes         | SVM (SMO)
+   -------------------------------------------------------------
+   Speed / Training Time    | Extremely Fast      | Moderate
+   Boundary Type            | Probabilistic       | Max-margin Hyperplane
+   Performance on Noise     | Robust              | High generalization
+   -------------------------------------------------------------
+
+3. Plotting Comparative Graphs:
+   - In WEKA Experimenter: Add dataset -> Setup algorithms (NaiveBayes, SMO) -> Run.
+   - Go to 'Analyse' tab -> Perform paired T-test and generate comparison plots for accuracy and ROC curves.

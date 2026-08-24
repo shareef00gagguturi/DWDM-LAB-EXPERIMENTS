@@ -1,0 +1,19 @@
+DAY 3 - QUESTION 4: Diabetes Trend Analysis using Linear & Multiple Regression
+========================================================================
+Dataset: diabetes.csv
+
+1. Simple Linear Regression:
+   - Formula: Y = beta_0 + beta_1 * Age
+   - Purpose: Model the progression/trend of diabetes indicators solely as a function of age.
+   - Analysis: Baseline risk and glucose levels demonstrate positive correlation with Age.
+
+2. Multiple Linear Regression:
+   - Formula: Y = beta_0 + beta_1 * Age + beta_2 * BMI + beta_3 * BloodPressure + beta_4 * Glucose
+   - Purpose: Evaluate composite impact of multiple physiological factors alongside Age.
+
+3. WEKA Step-by-Step Implementation:
+   a. Open WEKA Explorer -> Preprocess tab -> Load 'diabetes.csv'.
+   b. Go to Classify tab -> Choose Classifier -> functions -> LinearRegression.
+   c. Select Cross-Validation (10-fold) or Training Set.
+   d. Set target class attribute and click 'Start'.
+   e. Interpret the resulting model coefficients and summary error statistics.

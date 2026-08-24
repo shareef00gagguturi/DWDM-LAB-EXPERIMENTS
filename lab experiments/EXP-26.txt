@@ -1,0 +1,38 @@
+DAY 3 - QUESTION 5: Frequent Itemsets & FP-Tree Construction
+========================================================================
+Database Transactions:
+T1: (M, O, N, K, E, Y)
+T2: (D, O, N, K, E, Y)
+T3: (M, A, K, E)
+T4: (M, U, C, K, Y)
+T5: (C, O, K, I, E)
+
+Parameters: min_sup = 50% (5 * 0.5 = 2.5 -> min_sup_count = 3), min_conf = 80%
+
+1. Item Support Count:
+   - K: 5
+   - E: 4
+   - M: 3
+   - O: 3
+   - Y: 3
+   - N: 2, D: 1, A: 1, U: 1, C: 2, I: 1 (Pruned < 3)
+
+2. Frequent Itemsets:
+   - 1-itemsets: {K}:5, {E}:4, {M}:3, {O}:3, {Y}:3
+   - 2-itemsets: {K, E}:4, {K, M}:3, {K, O}:3, {K, Y}:3, {E, O}:3
+   - 3-itemsets: {K, E, O}:3
+
+3. FP-Tree Ordered Transactions (Priority: K:5, E:4, M:3, O:3, Y:3):
+   - T1: {K, E, M, O, Y}
+   - T2: {K, E, O, Y}
+   - T3: {K, E, M}
+   - T4: {K, M, Y}
+   - T5: {K, E, O}
+
+4. FP-Tree Paths:
+   Root
+    └── (K: 5)
+         ├── (E: 4)
+         │    ├── (M: 2) -> (O: 1) -> (Y: 1)
+         │    └── (O: 2) -> (Y: 1)
+         └── (M: 1) -> (Y: 1)

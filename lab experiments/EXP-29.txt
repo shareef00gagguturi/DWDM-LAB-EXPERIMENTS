@@ -1,0 +1,17 @@
+DAY 3 - QUESTION 8: Rule-Based vs Decision Tree Comparison in WEKA
+========================================================================
+Algorithms:
+1. Rule-Based: JRip (RIPPER) / PART / OneR
+2. Decision Tree: J48 (C4.5 implementation)
+
+Comparative Workflow:
+1. Load dataset (e.g. vote.arff / contact-lenses.arff) in WEKA.
+2. Run J48 classifier with 10-fold Cross-Validation.
+   - Record: Accuracy (%), Precision, Recall, Tree Size, Leaf Count.
+3. Run JRip classifier with 10-fold Cross-Validation.
+   - Record: Accuracy (%), Precision, Recall, Number of Rules.
+4. Plotting & Comparative Graphs:
+   - Switch to WEKA Experimenter or KnowledgeFlow environment.
+   - Add dataset and configure CrossValidationFoldMaker.
+   - Connect J48 and JRip to ClassifierPerformanceEvaluator.
+   - Attach ModelPerformanceChart / Visualizer to plot comparative ROC and accuracy bars.

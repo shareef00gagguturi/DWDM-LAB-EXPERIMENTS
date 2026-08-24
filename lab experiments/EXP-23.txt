@@ -1,0 +1,18 @@
+DAY 3 - QUESTION 2: Association Rules Maximum Bounds
+========================================================================
+Market Basket Dataset with Items: {Milk, Beer, Diapers, Bread, Butter, Cookies}
+Total Unique Items (d) = 6
+
+(a) Maximum number of association rules that can be extracted:
+    Formula: R = 3^d - 2^(d+1) + 1
+    For d = 6:
+    R = 3^6 - 2^(6+1) + 1
+      = 729 - 2^7 + 1
+      = 729 - 128 + 1
+      = 602 rules
+
+(b) Maximum size of frequent itemsets that can be extracted (assuming minsup > 0):
+    - Maximum size of any single transaction in the database:
+      Transaction 6: {Milk, Diapers, Bread, Butter} -> Size = 4
+      Transaction 9: {Milk, Diapers, Bread, Butter} -> Size = 4
+    - Maximum possible frequent itemset size = 4.

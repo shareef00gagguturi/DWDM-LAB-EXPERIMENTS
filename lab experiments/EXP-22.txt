@@ -1,0 +1,56 @@
+DAY 3 - QUESTION 1: Apriori & FP-Growth Algorithm Analysis
+========================================================================
+Dataset:
+Customer 1: 0001 {a, d, e}, 0024 {a, b, c, e}
+Customer 2: 0012 {a, b, d, e}, 0031 {a, c, d, e}
+Customer 3: 0015 {b, c, e}, 0022 {b, d, e}
+Customer 4: 0029 {c, d}, 0040 {a, b, c}
+Customer 5: 0033 {a, d, e}, 0038 {a, b, e}
+
+Total Transactions (N) = 10
+Minimum Support = 3 (30%)
+Minimum Confidence = 50%
+
+1. Item Support Counts (C1 -> L1):
+   - a: 7
+   - b: 6
+   - c: 4
+   - d: 6
+   - e: 8
+   (All items meet minsup >= 3)
+
+2. Frequent 2-Itemsets (L2):
+   - {a, b}: 4
+   - {a, c}: 3
+   - {a, d}: 4
+   - {a, e}: 6
+   - {b, c}: 3
+   - {b, d}: 2 (Pruned < 3)
+   - {b, e}: 5
+   - {c, d}: 2 (Pruned < 3)
+   - {c, e}: 3
+   - {d, e}: 5
+
+3. Frequent 3-Itemsets (L3):
+   - {a, b, c}: 2 (Pruned)
+   - {a, b, e}: 3 (Frequent)
+   - {a, c, e}: 2 (Pruned)
+   - {a, d, e}: 4 (Frequent)
+   - {b, c, e}: 2 (Pruned)
+
+4. Frequent 4-Itemsets (L4):
+   - None reach minsup >= 3.
+
+5. FP-Growth Construction:
+   - Priority Order: e(8) > a(7) > b(6) = d(6) > c(4)
+   - Conditional Pattern Bases & Itemsets Generated:
+     * c: {a, c: 3}, {e, c: 3}, {b, c: 3}
+     * d: {a, d: 4}, {e, d: 5}, {a, e, d: 4}
+     * b: {a, b: 4}, {e, b: 5}, {a, e, b: 3}
+     * a: {e, a: 6}
+
+6. Sample Strong Association Rules (Confidence >= 50%):
+   - {a, d} -> {e}: Conf = 4/4 = 100%
+   - {d} -> {a, e}: Conf = 4/6 = 66.67%
+   - {a, b} -> {e}: Conf = 3/4 = 75%
+   - {b} -> {e}: Conf = 5/6 = 83.33%

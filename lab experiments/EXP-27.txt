@@ -1,0 +1,18 @@
+DAY 3 - QUESTION 6: Categorical Prediction in WEKA (Trees, Preprocess, Logistic)
+========================================================================
+Tasks:
+(a) Tree-based classification
+(b) Preprocessing
+(c) Logistic Regression
+
+Step-by-Step WEKA Guide:
+1. Preprocess:
+   - Load dataset into WEKA Explorer.
+   - Apply 'weka.filters.unsupervised.attribute.Discretize' for numeric attributes or 'NominalToBinary'.
+2. Decision Tree (J48):
+   - Under Classify tab -> Choose 'trees -> J48'.
+   - Run 10-fold cross validation.
+   - Right-click result item -> 'Visualize tree'.
+3. Logistic Classifier:
+   - Under Classify tab -> Choose 'functions -> Logistic'.
+   - Review Odds Ratios, Confusion Matrix, and Accuracy metrics.

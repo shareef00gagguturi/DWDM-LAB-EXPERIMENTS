@@ -1,0 +1,38 @@
+DAY 3 - QUESTION 7: ARFF Dataset & Association Rule Evaluation
+========================================================================
+ARFF File Format:
+------------------------------------------------------------------------
+@relation market_basket
+
+@attribute HotDogs {0, 1}
+@attribute Buns {0, 1}
+@attribute Ketchup {0, 1}
+@attribute Coke {0, 1}
+@attribute Chips {0, 1}
+
+@data
+1,1,1,0,0
+1,1,0,0,0
+1,0,0,1,1
+0,0,0,1,1
+0,0,1,0,1
+1,0,0,1,1
+------------------------------------------------------------------------
+
+Analysis Parameters:
+- Total transactions = 6
+- minsup = 33.33% (count >= 2)
+- minconf = 60%
+
+(a) Frequent Itemsets:
+    - 1-itemsets: {HotDogs}:4, {Buns}:2, {Ketchup}:2, {Coke}:3, {Chips}:4
+    - 2-itemsets: {HotDogs, Buns}:2, {HotDogs, Coke}:2, {HotDogs, Chips}:2, {Coke, Chips}:3
+    - 3-itemsets: {HotDogs, Coke, Chips}:2
+
+(b) Generated Rules & Acceptance Status:
+    1. {Buns} -> {HotDogs}         | Conf = 2/2 = 100%  [ACCEPTED]
+    2. {HotDogs} -> {Buns}         | Conf = 2/4 = 50%   [REJECTED (< 60%)]
+    3. {Coke} -> {Chips}           | Conf = 3/3 = 100%  [ACCEPTED]
+    4. {Chips} -> {Coke}           | Conf = 3/4 = 75%   [ACCEPTED]
+    5. {HotDogs, Coke} -> {Chips}  | Conf = 2/2 = 100%  [ACCEPTED]
+    6. {HotDogs, Chips} -> {Coke}  | Conf = 2/2 = 100%  [ACCEPTED]
